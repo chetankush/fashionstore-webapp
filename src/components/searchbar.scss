@@ -1,0 +1,39 @@
+// searchbar.scss
+
+.searchbox {
+    width: 100%;
+    max-width: 600px; // Adjust as needed
+    margin: 0 auto;
+  }
+  
+  .searchbox__main {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0px 20px;
+    overflow: hidden;
+  }
+  
+  .inputfield__searchbox {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  .searchbox__icon {
+    color: #000;
+    padding: 0px;
+    margin: 4px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: white;
+  }
+  
+ 

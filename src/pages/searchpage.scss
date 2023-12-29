@@ -1,0 +1,54 @@
+// _variables.scss
+$header-bg-color: rgba(255, 255, 255, 0.0); // Adjust the alpha value for transparency
+$page-background-image: url('../assets/searchpage_bg.jpg'); // Replace with the path to your image
+
+// SearchPage.scss
+@import '../styles/variables';
+
+body {
+  background-image: $page-background-image;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0; /* Reset margin for the body */
+}
+
+.header__for__searchpage {
+  background-color: $header-bg-color;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  img {
+    width: 80px; // Set your desired initial icon size
+    height: auto;
+    margin-top: 20px;
+    margin-right: 40px; // Adjust the margin as needed
+    transition: width 0.3s; // Add a transition for a smoother effect
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 60px; // Adjust the icon size for smaller screens
+    }
+
+    
+
+  }
+}
+
+.searchbar__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 12rem;
+  width: 100%;
+}
