@@ -1,17 +1,21 @@
 import React from 'react'
 import './searchpage.scss'
 import SearchBar from '../components/SearchBar'
-import '../'
 
-const itemList = [
-    'Striped shirt dress',
-    'Satin shirts',
-    'Denim jumpsuit',
-    'Leather dresses',
-    'Solid tshirts',
-];
+import { NavLink } from 'react-router-dom'
+
+// const itemList = [
+//     'Striped shirt dress',
+//     'Satin shirts',
+//     'Denim jumpsuit',
+//     'Leather dresses',
+//     'Solid tshirts',
+// ];
 
 const SearchPage = () => {
+
+
+
     return (
         <div>
 
@@ -23,37 +27,72 @@ const SearchPage = () => {
                 <SearchBar />
             </div>
 
-            <div className="suggestion__box">
-
-                <div className="suggestions__inner__div">
-                <h2 className="popular__suggestions">
-                Latest Trends
-                </h2>
-                
-                    <div className="latest__trends">
-                        <div className="latest__trends">1</div>
-                        <div className="latest__trends">2</div>
-                        <div className="latest__trends">3</div>
-                        <div className="latest__trends">4</div>
-                        <div className="latest__trends">5</div>
+            <div className="container">
+                <div className="content">
+                    <h2 className="heading">Latest Trends</h2>
+                    <div className="image-container">
+                        <NavLink className="link" to="/productpage">
+                            <div className="image-item">
+                                <img
+                                    alt="Shirt with puffed sleeves"
+                                    className="image"
+                                    src="/puffedsleeves.jpg"
+                                />
+                                <span className="text">Shirt with puffed sleeves</span>
+                            </div>
+                        </NavLink>
+                        <NavLink className="link" to="/productpage">
+                        <div className="image-item">
+                            <img
+                                alt="Linen jumpsuit"
+                                className="image"
+                                src="/linenjumpsuit.jpg"
+                            />
+                            <span className="text">Linen jumpsuit</span>
+                        </div>
+                        </NavLink>
+                        <NavLink className="link" to="/productpage">
+                        <div className="image-item">
+                            <img
+                                alt="White formal suit"
+                                className="image"
+                                src="/whiteformalsuit.jpg"
+                            />
+                            <span className="text">White formal suit</span>
+                        </div>
+                        </NavLink>
+                        <NavLink className="link" to="/productpage">
+                        <div className="image-item">
+                            <img
+                                alt="Pattern dresses"
+                                className="image"
+                                src="/patterns.jpg"
+                            />
+                            <span className="text">Pattern dresses</span>
+                        </div>
+                        </NavLink>
+                        <NavLink className="link" to="/productpage">
+                        <div className="image-item">
+                            <img
+                                alt="Leather shirt dress"
+                                className="image"
+                                src="/leatherjacket.jpg"
+                            />
+                            <span className="text">Leather shirt dress</span>
+                        </div>
+                        </NavLink>
                     </div>
-
-                    <div>
-                        <h2 className="popular__suggestions">
-                            Popular suggestions
-                        </h2>
-                        <ul>
-                            {itemList.map((item, index) => (
-                                <li key={index} className="font-roboto text-sm">
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <h2 className="heading">Popular suggestions</h2>
+                    <ul className="suggestions">
+                        <li className="text">Striped shirt dress</li>
+                        <li className="text">Satin shirts</li>
+                        <li className="text">Denim jumpsuit</li>
+                        <li className="text">Leather dresses</li>
+                        <li className="text">Solid tshirts</li>
+                    </ul>
                 </div>
-
-
             </div>
+
 
         </div>
     )

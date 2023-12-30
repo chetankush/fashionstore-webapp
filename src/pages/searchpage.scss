@@ -14,7 +14,8 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  margin: 0; /* Reset margin for the body */
+  margin: 0;
+  /* Reset margin for the body */
 }
 
 .header__for__searchpage {
@@ -39,9 +40,6 @@ body {
     img {
       width: 60px; // Adjust the icon size for smaller screens
     }
-
-    
-
   }
 }
 
@@ -49,6 +47,102 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  top: 12rem;
+  margin-left: 120px;
   width: 100%;
+  transition: width 0.5s; 
+
+  
+  @media (max-width: 768px) {
+    img {
+      width: 60px;
+    }
+  }
+}
+
+
+/* styles.scss */
+
+.container {
+  border-radius: 4px;
+  top: 13rem;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  max-width: 900px;
+  height: 100%;
+  background: white;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+
+  .content {
+    padding: 2rem;
+
+    .heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      .image-item {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        text-decoration: none !important;
+        text-underline-offset: unset;
+
+        .image {
+          background: #000;
+          height: 180px;
+          width: 140px;
+          object-fit: cover;
+          aspect-ratio: 260/280;
+          border-radius: 4px;
+        }
+
+        .text {
+          margin-top: 0.5rem;
+          align-items: center;
+          width: 100%;
+          max-width: 140px;
+
+          a {
+            text-decoration: none !important;
+            color: inherit;
+            /* Optionally, ensure that the link color remains unchanged */
+          }
+
+          a:hover {
+            text-decoration: none !important;
+          }
+        }
+      }
+    }
+
+    .link {
+      text-decoration: none;
+    }
+
+    .suggestions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2rem;
+
+      .text {
+        margin-top: 0.5rem;
+      }
+    }
+
+  }
 }

@@ -1,0 +1,572 @@
+/* styles.css */
+
+.productpage__container {
+    border-radius: 4px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+
+    height: 100vh;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: white;
+    padding: 1rem 0;
+}
+
+
+
+.searchbox {
+    width: 100%;
+    max-width: 450px; // Adjust as needed
+    margin: 0 auto;
+    transition: width 0.5s;
+}
+
+
+
+
+
+.searchbox__smallicon {
+
+    font-size: 16px;
+    /* Adjust the size as needed */
+}
+
+
+.searchbox__main {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0px 8px;
+    overflow: hidden;
+}
+
+.inputfield__searchbox {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchbox__icon {
+    color: #000;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 6px;
+    margin-right: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: white;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 80px;
+}
+
+
+@media (max-width:700px) {
+
+    .searchbox {
+        width: 100%;
+        max-width: 350px; // Adjust as needed
+        margin: 0 auto;
+        transition: width 0.5s;
+    }
+
+    .searchbox__main {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin: 6px 26px;
+        overflow: hidden;
+    }
+
+
+}
+
+
+@media (max-width:500px) {
+
+    .searchbox {
+        width: 100%;
+        max-width: 240px; // Adjust as needed
+        margin: 0 auto;
+        transition: width 0.5s;
+    }
+
+    .searchbox__main {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin: 6px 0px;
+        overflow: hidden;
+    }
+
+    .inputfield__searchbox {
+        max-width: 170px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:400px) {
+
+    .searchbox {
+        width: 100%;
+        max-width: 160px; // Adjust as needed
+        margin: 0 auto;
+        transition: width 0.5s;
+    }
+
+    .searchbox__main {
+        display: flex;
+        padding: 0;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin: 6px 0px;
+        overflow: hidden;
+    }
+
+    .inputfield__searchbox {
+        width: 120px;
+        padding: 0;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+}
+
+
+img {
+    width: 60px;
+    height: auto;
+
+    margin-right: 20px;
+    transition: width 0.3s;
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 60px; // Adjust the icon size for smaller screens
+    }
+}
+
+.search-input {
+    width: 40%;
+    /* 1/2 of the space */
+    margin-left: 80px;
+}
+
+.logo-image {
+    width: 32px;
+    /* Fixed width for the logo */
+    height: auto;
+    aspect-ratio: 150/50;
+    object-fit: cover;
+}
+
+.flex-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+
+    @media (max-width: 600px) {
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.mobile__filters__sidebar {
+    display: none;
+
+
+    @media (max-width: 600px) {
+        margin-top: 0px;
+        display: block;
+        /* or any other appropriate value */
+        width: 100%;
+        height: 50px;
+        background-color: rgb(255, 255, 255);
+        color: #000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .filterbutton {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: row;
+        }
+    }
+}
+
+
+.sidebar {
+    width: 20%;
+    padding-left: 2rem;
+    background-color: white;
+}
+
+.brand__name {
+    font-size: 38px;
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+
+        width: 20%;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+        width: 20%;
+        padding-left: 1rem;
+    }
+}
+
+h1 {
+
+    letter-spacing: 3px;
+    font-size: x-large;
+
+}
+
+.filter-button {
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+
+.Filterssmallscreenheading {
+    margin-top: 30px;
+    font-size: x-large;
+}
+
+.searchresultheading {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.brand-heading {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+
+.form-checkbox {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    /* Border color for the checkbox */
+    /* Border radius to make it look like a square */
+    border-radius: 0px;
+    cursor: pointer;
+    margin-right: 5px;
+    /* Add some margin between the checkbox and the text */
+}
+
+/* Custom styling for the checked state */
+
+
+.brand-section,
+.price-range-section,
+.ratings-section {
+    margin-bottom: 16px;
+}
+
+.brand-heading,
+.price-range-heading,
+.ratings-heading {
+    margin-bottom: 16px;
+    font-size: larger;
+    font-weight: 400;
+}
+
+.brand-options,
+.price-range-options,
+.ratings-options {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    gap: 8px;
+}
+
+.brand-option,
+.price-range-option,
+.ratings-option {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+
+
+.filter-sidebar {
+    position: fixed;
+    bottom: -100%;
+    top: 12rem;
+    left: 0;
+    z-index: 70;
+    width: 100vw;
+    border-radius: 20px !important;
+    height: 100%;
+    background-color: #fff;
+    transition: bottom 0.3s ease;
+
+
+    .mobile__filters {
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid grey;
+        position: relative;
+        background-color: white;
+
+        border-radius: 20px;
+        height: 100vh;
+        padding: 8px 30px;
+        overflow-y: auto;
+
+    }
+
+
+
+    .close-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: 1px solid black;
+        /* Updated border property */
+        background-color: white;
+        color: #000;
+        cursor: pointer;
+        width: 80px;
+        height: 40px;
+    }
+
+}
+
+/* Show the sidebar when the class 'show' is added */
+.filter-sidebar.show {
+    bottom: -100px;
+    overflow-y: scroll;
+    overflow-y: visible;
+}
+
+
+
+
+.main-content {
+    width: 80%;
+    /* 3/4 of the space */
+}
+
+
+.grid-container {
+
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 0;
+    gap: 20px;
+    justify-items: center;
+
+}
+
+@media (max-width: 968px) {
+
+
+    .grid-container {
+        padding: 50px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 0;
+        gap: 20px;
+        justify-items: center;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        padding: 50px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+        gap: 20px;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        padding: 50px 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+        gap: 20px;
+        justify-items: center;
+
+
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+.product-item {
+    background-color: white;
+    border-radius: 4px;
+    max-width: 180px;
+    margin-bottom: 10px;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.like__button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: white;
+}
+
+.fav__border.hidden,
+.fav__button.hidden {
+    display: none;
+}
+
+.fav__border {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+}
+
+.fav__button {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+}
+
+.product-item .hover-button {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    background-color: #8394EC;
+    opacity: 0.85;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-item:hover .hover-button {
+    opacity: .85; // Show the button on hover
+    color: white;
+}
+
+
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 120/160;
+    object-fit: cover;
+}
+
+.product-name {
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+
+    word-break: break-word;
+}
+
+
+.product-price {
+    color: #718096;
+    margin-bottom: 0px;
+    margin: 6px 0px;
+    font-size: 0.775rem;
+    font-weight: bold;
+}
+
+.discounted-price {
+    color: #6D84FF !important;
+}
+
+.line-through {
+    text-decoration: line-through;
+    font-size: 0.775rem;
+    font-weight: normal !important;
+    padding-right: 4px;
+}
+
+.flex__prices {
+    display: flex;
+    justify-content: start;
+}
+
+.rating-star {
+    color: #f6e05e;
+    font-size: 1rem;
+    letter-spacing: 4px;
+}
+
+.rating-count {
+    font-size: 0.775rem;
+    color: #718096;
+
+}
+
+
+.product-rating {
+    margin-top: -4px;
+}

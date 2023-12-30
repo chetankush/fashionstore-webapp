@@ -1,11 +1,262 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import './searchpage.scss'
+import './productpage.scss'
+import axios from 'axios'
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
+
+const generateStars = (rating) => {
+    const filledStars = Math.floor(rating);
+    const emptyStars = 5 - filledStars;
+
+    return (
+        <>
+            {[...Array(filledStars)].map((_, index) => (
+                <span key={index} className="rating-star text-yellow-400">★</span>
+            ))}
+            {[...Array(emptyStars)].map((_, index) => (
+                <span key={index} className="rating-star text-gray-400">☆</span>
+            ))}
+        </>
+    );
+};
 
 const ProductPage = () => {
-  return (
-    <div>
-      producspage
-    </div>
-  )
+
+    const [likedProducts, setLikedProducts] = useState([]);
+    const [showFilters, setShowFilters] = useState(false);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const handleToggleFilters = () => {
+        setShowFilters(!showFilters);
+    };
+
+    const handleCloseFilters = () => {
+        setShowFilters(false);
+    };
+
+    const handleToggleLike = (index) => {
+        // Toggle the liked state for the clicked product
+        setLikedProducts((prevLikedProducts) => {
+            const newLikedProducts = [...prevLikedProducts];
+            newLikedProducts[index] = !newLikedProducts[index];
+            return newLikedProducts;
+        });
+    };
+
+
+
+
+    useEffect(() => {
+        // Fetch data from the fake store API
+        axios.get('https://fakestoreapi.com/products')
+            .then(response => {
+                setData(response.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            });
+    }, []);
+
+    return (
+        <div className="productpage__container">
+            <div className="sticky-header">
+                <div className="header-content">
+
+                    <div className='searchbox'>
+                        <div className="searchbox__main">
+                            <input
+                                type="text"
+                                name="search"
+                                placeholder="Search"
+                                className="inputfield__searchbox"
+                            />
+                            <button className="searchbox__icon">
+                                <SearchIcon fontSize="large" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <img src="https://assets-global.website-files.com/622778f0460ef2a7b46117c1/632c38d0a82442dc8dfe0f53_zevi-logo-_2_.webp" alt="zevi_logo" />
+
+                </div>
+            </div>
+            <div className="mobile__filters__sidebar">
+                Search Results...
+                <div className="filterbutton" onClick={handleToggleFilters}>
+                    Filters
+                    <KeyboardArrowDownIcon />
+                </div>
+
+                {showFilters && (
+                    <div className={`filter-sidebar ${showFilters ? 'show' : ''}`}>
+
+
+                        <div className="mobile__filters">
+                         <div>
+                            <div className="brand-section">
+                                <div className="Filterssmallscreenheading">Filters</div>
+                                <h3 className="brand-heading font-semibold">CATEGORIES</h3>
+                                <div className="brand-options space-y-2">
+                                    <label className="brand-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span>Cloths</span>
+                                    </label>
+                                    <label className="brand-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span>Jewelery</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="price-range-section">
+                                <h3 className="price-range-heading font-semibold">PRICE RANGE</h3>
+                                <div className="price-range-options space-y-2">
+                                    <label className="price-range-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span>Under 999</span>
+                                    </label>
+                                    <label className="price-range-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span>1000 To 3000</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="ratings-section">
+                                <h3 className="ratings-heading font-semibold">RATINGS</h3>
+                                <div className="ratings-options space-y-2">
+                                    <label className="ratings-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span className="rating-star text-yellow-400">★★★★★</span>
+                                    </label>
+                                    <label className="ratings-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span className="rating-star text-yellow-400">★★★★☆</span>
+                                    </label>
+                                    <label className="ratings-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span className="rating-star text-yellow-400">★★★☆☆</span>
+                                    </label>
+                                    <label className="ratings-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span className="rating-star text-yellow-400">★★☆☆☆</span>
+                                    </label>
+                                    <label className="ratings-option flex items-center space-x-2">
+                                        <input className="form-checkbox" type="checkbox" />
+                                        <span className="rating-star text-yellow-400">★☆☆☆☆</span>
+                                    </label>
+                                </div>
+                            </div>
+                            </div>
+                            <button className="close-button" onClick={handleCloseFilters}>
+                                Close
+                            </button>
+                        </div>
+
+                    </div>
+                )}
+            </div>
+            <div className="flex-container">
+                <div className="sidebar">
+                    <div className="brand-section">
+                        <h1 className="searchresultheading">Search Results</h1>
+                        <h3 className="brand-heading font-semibold">CATEGORIES</h3>
+                        <div className="brand-options space-y-2">
+                            <label className="brand-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span>Cloths</span>
+                            </label>
+                            <label className="brand-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span>Jewelery</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="price-range-section">
+                        <h3 className="price-range-heading font-semibold">PRICE RANGE</h3>
+                        <div className="price-range-options space-y-2">
+                            <label className="price-range-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span>Under 999</span>
+                            </label>
+                            <label className="price-range-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span>1000 To 3000</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="ratings-section">
+                        <h3 className="ratings-heading font-semibold">RATINGS</h3>
+                        <div className="ratings-options space-y-2">
+                            <label className="ratings-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span className="rating-star text-yellow-400">★★★★★</span>
+                            </label>
+                            <label className="ratings-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span className="rating-star text-yellow-400">★★★★☆</span>
+                            </label>
+                            <label className="ratings-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span className="rating-star text-yellow-400">★★★☆☆</span>
+                            </label>
+                            <label className="ratings-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span className="rating-star text-yellow-400">★★☆☆☆</span>
+                            </label>
+                            <label className="ratings-option flex items-center space-x-2">
+                                <input className="form-checkbox" type="checkbox" />
+                                <span className="rating-star text-yellow-400">★☆☆☆☆</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div className="main-content">
+                    <div className="grid-container">
+                        {loading && (<div><p>Loading products...</p></div>)}
+                        {data.map((product, index) => (
+                            <div key={product.id} className="product-item">
+                                <div className="product-image-container">
+                                    <img
+                                        alt={product.title}
+                                        className="product-image"
+                                        height="200"
+                                        src={product.image}
+                                        width="200"
+                                    />
+
+                                    <div className="like__button" onClick={() => handleToggleLike(index)}>
+                                        <div className={`fav__border ${likedProducts[index] ? 'hidden' : ''}`}>
+                                            <FavoriteBorderIcon />
+                                        </div>
+                                        <div className={`fav__button ${likedProducts[index] ? '' : 'hidden'}`}>
+                                            <FavoriteIcon />
+                                        </div>
+                                    </div>
+                                    <div className="hover-button">View Product</div>
+                                </div>
+                                <h4 className="product-name mb-1">{product.title}</h4>
+                                <div className="flex__prices">
+                                    <p className="product-price text-gray-500 line-through">Rs. {product.price + 1000}</p>
+                                    <p className="product-price  discounted-price mb-1">Rs.{product.price + 1000 - 120}</p>
+                                </div>
+                                <div className="product-rating flex items-center">
+                                    <span className="rating-star text-yellow-400"> {generateStars(product.rating.rate)}</span>
+                                    <span className="rating-count text-sm text-gray-500 ml-2">({product.rating.count})</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    )
 }
 
 export default ProductPage
