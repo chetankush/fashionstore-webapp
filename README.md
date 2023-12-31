@@ -1,4 +1,3 @@
-<img width="957" alt="Screenshot 2023-12-31 151033" src="https://github.com/chetankush/fashionstore-webapp/assets/78559285/e0ab145c-aa1d-4629-8ea3-1693b5aee41d">
 # Build using reactjs and sass
 
   **you can navigate to the product page by clicking any category on the default searchpage**
