@@ -4,13 +4,6 @@ import SearchBar from '../components/SearchBar'
 
 import { NavLink } from 'react-router-dom'
 
-// const itemList = [
-//     'Striped shirt dress',
-//     'Satin shirts',
-//     'Denim jumpsuit',
-//     'Leather dresses',
-//     'Solid tshirts',
-// ];
 
 const SearchPage = () => {
 
