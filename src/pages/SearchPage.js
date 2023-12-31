@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './searchpage.scss'
 import SearchBar from '../components/SearchBar'
 
@@ -14,7 +14,11 @@ import { NavLink } from 'react-router-dom'
 
 const SearchPage = () => {
 
+    const [showContainer, setShowContainer] = useState(false);
 
+    const handleSearchClick = () => {
+      setShowContainer(!showContainer);
+    };
 
     return (
         <div>
@@ -22,11 +26,10 @@ const SearchPage = () => {
             <header className='header__for__searchpage'>
                 <img src="https://assets-global.website-files.com/622778f0460ef2a7b46117c1/632c38d0a82442dc8dfe0f53_zevi-logo-_2_.webp" alt="zevi_logo" />
             </header>
-
-            <div className="searchbar__container">
+            <div className="searchbar__container" onClick={handleSearchClick}>
                 <SearchBar />
             </div>
-
+            {showContainer && (
             <div className="container">
                 <div className="content">
                     <h2 className="heading">Latest Trends</h2>
@@ -92,6 +95,7 @@ const SearchPage = () => {
                     </ul>
                 </div>
             </div>
+            )}
 
 
         </div>
