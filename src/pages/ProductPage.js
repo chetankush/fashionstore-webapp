@@ -34,7 +34,11 @@ const ProductPage = () => {
     const [selectedPriceRanges, setSelectedPriceRanges] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedStars, setSelectedStars] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
+    const handleSearchChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
     const handleToggleFilters = () => {
         setShowFilters(!showFilters);
     };
@@ -57,11 +61,26 @@ const ProductPage = () => {
                 const response = await axios.get('https://fakestoreapi.com/products');
                 let filteredData = response.data;
 
+
+
+                // Apply search filter
+                if (searchQuery.trim() !== '') {
+                  const searchRegex = new RegExp(searchQuery, 'i');
+                  filteredData = filteredData.filter(product =>
+                    searchRegex.test(product.title)
+                  );
+                }
+
+
                 if (selectedCategories.length > 0) {
                     filteredData = filteredData.filter(product =>
                         selectedCategories.includes(product.category)
                     );
                 }
+
+
+
+
 
                 if (selectedPriceRanges.length > 0) {
                     filteredData = filteredData.filter(product =>
@@ -87,7 +106,7 @@ const ProductPage = () => {
         };
 
         fetchData();
-    }, [selectedCategories, selectedPriceRanges, selectedStars]);
+    }, [searchQuery, selectedCategories, selectedPriceRanges, selectedStars]);
 
     const handleCheckboxChange = category => {
         setSelectedCategories(prevCategories =>
@@ -130,12 +149,14 @@ const ProductPage = () => {
 
                     <div className='searchboxproductpage'>
                         <div className="searchbox__main">
-                            <input
-                                type="text"
-                                name="search"
-                                placeholder="Search"
-                                className="inputfield__searchbox__product"
-                            />
+                        <input
+                        type="text"
+                        name="search"
+                        placeholder="Search"
+                        className="inputfield__searchbox__product"
+                        value={searchQuery}
+                        onChange={handleSearchChange}
+                      />
                             <button className="searchbox__icon">
                                 <SearchIcon fontSize="large" />
                             </button>
