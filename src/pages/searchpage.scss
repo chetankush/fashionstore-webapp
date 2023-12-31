@@ -46,8 +46,8 @@ body {
 .searchbar__container {
   position: relative;
   display: flex;
+  top: 12rem;
   justify-content: center;
-  margin-left: 120px;
   width: 100%;
   transition: width 0.5s; 
 
@@ -55,6 +55,16 @@ body {
   @media (max-width: 768px) {
     img {
       width: 60px;
+    }
+
+    .searchbar__container {
+      position: relative;
+      display: flex;
+      top: 6rem;
+      justify-content: center;
+      margin: 8px 8px;
+      width: 100%;
+      transition: width 0.5s; 
     }
   }
 }
@@ -68,12 +78,14 @@ body {
   position: relative;
   margin: auto;
   width: 80%;
-  max-width: 900px;
+  max-width: 900px !important;
   height: 100%;
   background: white;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   overflow: auto;
-
+  
+  
+  
   .content {
     padding: 2rem;
 
@@ -88,9 +100,15 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      overflow-x: scroll;
+
+
+
 
       gap: 1rem;
       margin-bottom: 2rem;
+
+
 
       .image-item {
 
@@ -127,6 +145,16 @@ body {
           }
         }
       }
+    }
+
+    .image-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .image-container {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
     }
 
     .link {

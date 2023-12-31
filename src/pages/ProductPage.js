@@ -128,13 +128,13 @@ const ProductPage = () => {
             <div className="sticky-header">
                 <div className="header-content">
 
-                    <div className='searchbox'>
+                    <div className='searchboxproductpage'>
                         <div className="searchbox__main">
                             <input
                                 type="text"
                                 name="search"
                                 placeholder="Search"
-                                className="inputfield__searchbox"
+                                className="inputfield__searchbox__product"
                             />
                             <button className="searchbox__icon">
                                 <SearchIcon fontSize="large" />
@@ -261,6 +261,9 @@ const ProductPage = () => {
                         <KeyboardArrowDownIcon  className="sidebardowns"/>
                         </div>
                     </div>
+
+                    <div className="filter-separator"></div>
+
                     <div className="price-range-section">
                     <div className="flexitems"> 
                     <div className="flexcol"> 
@@ -289,6 +292,9 @@ const ProductPage = () => {
                         <KeyboardArrowDownIcon  className="sidebardowns"/>
                         </div>
                     </div>
+
+                    <div className="filter-separator"></div>
+
                     <div className="ratings-section">
                     <div className="flexitems"> 
                     <div className="flexcol"> 
@@ -309,7 +315,6 @@ const ProductPage = () => {
                          <KeyboardArrowDownIcon  className="sidebardowns"/>
                          </div>
                     </div>
-
                 </div>
                 <div className="main-content">
                     <div className="grid-container">

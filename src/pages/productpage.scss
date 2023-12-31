@@ -22,7 +22,7 @@
 
 
 
-.searchbox {
+.searchboxproductpage {
     width: 100%;
     max-width: 450px; // Adjust as needed
     margin: 0 auto;
@@ -50,7 +50,7 @@
     overflow: hidden;
 }
 
-.inputfield__searchbox {
+.inputfield__searchbox__product {
     flex: 1;
     padding: 10px;
     border: none;
@@ -82,7 +82,7 @@
 
 @media (max-width:700px) {
 
-    .searchbox {
+    .searchboxproductpage {
         width: 100%;
         max-width: 350px; // Adjust as needed
         margin: 0 auto;
@@ -105,7 +105,7 @@
 
 @media (max-width:500px) {
 
-    .searchbox {
+    .searchboxproductpage {
         width: 100%;
         max-width: 240px; // Adjust as needed
         margin: 0 auto;
@@ -118,12 +118,12 @@
         background-color: #fff;
         border: 1px solid #ccc;
         border-radius: 8px;
-        margin: 6px 0px;
+        margin: 6px 8px;
         overflow: hidden;
     }
 
-    .inputfield__searchbox {
-        max-width: 170px;
+    .inputfield__searchbox__product {
+        max-width: 160px;
         border: none;
         outline: none;
         font-size: 16px;
@@ -133,9 +133,9 @@
 
 @media (max-width:400px) {
 
-    .searchbox {
+    .searchboxproductpage {
         width: 100%;
-        max-width: 160px; // Adjust as needed
+        max-width: 180px; // Adjust as needed
         margin: 0 auto;
         transition: width 0.5s;
     }
@@ -147,11 +147,11 @@
         background-color: #fff;
         border: 1px solid #ccc;
         border-radius: 8px;
-        margin: 6px 0px;
+        margin: 6px 8px;
         overflow: hidden;
     }
 
-    .inputfield__searchbox {
+    .inputfield__searchbox__product {
         width: 120px;
         padding: 0;
         border: none;
@@ -287,7 +287,7 @@ h1 {
 .flexitems{
     display: flex;
     justify-content: space-between;
-    margin-right: 50px;
+    margin-right: 4rem;
     
     align-items: first baseline;
 }
@@ -300,6 +300,15 @@ h1 {
 .flexcol{
     display: flex;
     flex-direction: column;
+    
+}
+
+/* Add this to your existing styles */
+.filter-separator {
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+    margin-right: 4rem;
     
 }
 

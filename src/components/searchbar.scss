@@ -16,9 +16,22 @@
     margin: 0px 20px;
     overflow: hidden;
   }
+
+  @media (max-width: 768px) {
+
+    .searchbox__main {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 0px 20px;
+      overflow: hidden;
+    }
+  }
   
   .inputfield__searchbox {
-    flex: 1;
+    flex: 1 ;
     padding: 18px;
     border: none;
     outline: none;
