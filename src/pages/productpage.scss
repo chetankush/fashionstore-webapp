@@ -284,6 +284,25 @@ h1 {
     font-weight: 400;
 }
 
+.flexitems{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    
+    align-items: first baseline;
+}
+
+.sidebardowns{
+  
+    padding-top: 0px;
+}
+
+.flexcol{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 
 .form-checkbox {
     width: 15px;
