@@ -1,6 +1,6 @@
 # Build using reactjs and sass
 
-  **you can navigate to the product page by clicking any category on the default searchpage**
+  **first click on the search bar then you can navigate to the product page by clicking any category in the latest trends**
   
   use of api with filters like category, prices and Ratings and also you can filter products using Search 
 
