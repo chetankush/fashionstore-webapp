@@ -1,5 +1,7 @@
-# Build
+# Build using reactjs and sass
 
+  **you can navigate to the product page by clicking any category on the default searchpage**
+  
   use of api with filters like category, prices and Ratings and also you can filter products using Search 
 
 
